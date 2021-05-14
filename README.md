@@ -1,5 +1,5 @@
 # Finger Sweat Analysis Enables Short Interval Metabolic Biomonitoring in Humans 
-This is code for Brunmair et al. 2020 [1]. For further discussion please see the manuscript.
+This is code discussed in Brunmair et al. 2020 [1]. For further explaination please see the manuscript and supplementary notes "Mathematical Model" and "Sensitivity Analysis".
 
 ## Prerequisites
 Python 3.7 and packages listed in requirements.txt.
