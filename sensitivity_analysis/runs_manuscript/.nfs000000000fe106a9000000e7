@@ -1,0 +1,179 @@
+#!/home/users/mgotsmy/envs/robust_loss/bin/python -t
+
+import os
+os.environ["OMP_NUM_THREADS"] = str(1)
+import numpy as np
+import pandas as pd
+from scipy.optimize import curve_fit
+from multiprocessing import Pool
+import tqdm
+import random
+import robust_loss_pytorch
+from scipy.optimize import minimize
+import torch
+import matplotlib.pyplot as plt
+import sys
+sys.path.append('/home/users/mgotsmy/sweat/notebooks/210316_validation/')
+import fit_functions as fit
+from pathlib import Path
+
+def optimization_problem_robust_loss(_input):
+    global alpha, scale, loss
+    
+    p0,lb,ub = _input
+    alpha, scale = 1, 1
+    y_values = with_err.values.flatten() # normal flatten because i did a transpose earlier
+    x_values = with_err.index.values
+    bounds   = (lb.astype('float64') ,ub.astype('float64') )
+    try:
+        para, var = curve_fit(f         = fit.fit_robust_loss,
+                              xdata     = x_values,
+                              ydata     = y_values,
+                              p0        = p0,
+                              bounds    = bounds,
+                              method    = 'trf',
+                              max_nfev  = 1000,
+                              loss      = robust_loss,
+                              tr_solver = 'exact')
+        #print(list(para)+[float(loss)])
+        return list(para)+[float(loss)]
+    except:
+        return '#Error'
+    
+    
+def robust_loss(z):
+    '''
+    Takes (fit-real) array and calculates loss with generalized adaptive loss function.
+    '''
+    global alpha, scale, loss
+    
+    ## second optimization problem, parameters are tested to make sense
+    result = minimize(fun=fit.min_problem,args=z,x0=(alpha,scale),bounds=[(.001,1.999),(10e-5,np.inf)],method='TNC',options={'maxiter':100,'accuracy':10e-10})
+    alpha = result['x'][0]
+    scale = result['x'][1]
+    loss = result['fun']
+    epsilon = 10e-5
+
+    ## calculate accurate loss and gradient   
+    distribution = robust_loss_pytorch.distribution.Distribution()
+    nll    = distribution.nllfun(torch.tensor(z,dtype=torch.float64),torch.clamp(torch.ones(1,dtype=torch.float64)*alpha,0,1.999),torch.clamp(torch.ones(1,dtype=torch.float64)*scale,0,np.inf))
+    nlleps = distribution.nllfun(torch.tensor(z-epsilon,dtype=torch.float64),torch.clamp(torch.ones(1,dtype=torch.float64)*alpha,0,1.999),torch.clamp(torch.ones(1,dtype=torch.float64)*scale,0,np.inf))
+    gradient = (nll-nlleps)/epsilon
+    rho = np.zeros((3,len(z)))
+    rho[0] = nll.detach().numpy()               # loss
+    rho[1] = gradient.detach().numpy()          # first  derivative of loss
+    # rho[2] is actually never used, so i don't set it
+    
+    return rho
+
+def generate_errored_data(original,path):
+    # generate random svs; remove everything <= 0 (maybe use scipy's truncnorm for that, or some poisson-distribution)
+    sv = [0]
+    mu = np.mean([.05*4,.62*4])
+    sigma = np.std([.05*4,.62*4])
+    while np.min(sv) <= 0:
+        sv = np.random.normal(mu,sigma/2,len(timepoints))
+    # put random error on original data
+    with_err = original.copy()
+    for metabolite in ['caf','par','bro','phy']:
+        with_err[metabolite] = with_err[metabolite]*sv
+    # write an output file of this replicate
+    with open(path+'.txt','a') as file:
+        file.write('\n#SV_VALUES ')
+        file.write(str(list(sv))[1:-1].replace(',',''))
+        
+    return with_err
+
+def generate_original_data(path,timepoints):
+    # approximatios of hehe for now
+    kcincaf = 1.60
+    kcafpar = 0.02
+    kcafbro = 0.01
+    kcafphy = 0.01
+    kcafdeg = 0.04
+    kpardeg = 0.13
+    kbrodeg = 0.10
+    kphydeg = 0.10
+    par0    = 0.01
+    bro0    = 0.01
+    phy0    = 0.00
+    parameters = np.array((kcincaf,kcafpar,kcafbro,kcafphy,kcafdeg,kpardeg,kbrodeg,kphydeg,par0,bro0,phy0))
+    caf_values = fit.caf(timepoints,*parameters)
+    par_values = fit.par(timepoints,*parameters)
+    bro_values = fit.bro(timepoints,*parameters)
+    phy_values = fit.phy(timepoints,*parameters)
+    original = pd.DataFrame([caf_values,par_values,bro_values,phy_values],columns=timepoints,index=['caf','par','bro','phy']).transpose()
+    with open(path+'.txt','w') as file:
+        file.write('#ORIGINAL_PARAMETERS ')
+        file.write(str(list(parameters))[1:-1].replace(',',''))
+        file.write('\n#TIMEPOINTS ')
+        file.write(str(list(timepoints))[1:-1].replace(',',''))
+        
+    return original 
+
+def save_raw_data(path,output_list,n_rep):
+    with open(path+'_raw/'+str(n_rep)+'.raw','w') as file:
+        for i in output_list:
+            file.write(str(i)[1:-1].replace(',',''))
+            file.write('\n')
+
+
+def get_best_fit(path,max_tries,n_rep,n_cpu):
+    # set bounds
+    n_sf       = len(timepoints)
+    lb         = np.concatenate((np.zeros(11),np.ones(n_sf)*.05))
+    ub         = np.concatenate(([10],np.ones(10)*.2,np.ones(n_sf)*4))
+    input_list = []
+    n_try      = 0
+    while n_try < max_tries:
+        n_try += 1
+        p0     = []
+        for l,u in zip(lb,ub):
+            p0.append(random.uniform(l,u))
+        p0 = np.array(p0)
+        input_list.append([p0,lb,ub])
+
+    output_list = []
+    #for input_ in input_list:
+    #    result = optimization_problem_robust_loss(*input_)
+    #    output_list.append(result)
+    p = Pool(processes = n_cpu)
+    for _ in tqdm.tqdm(p.imap_unordered(optimization_problem_robust_loss,input_list),total=len(input_list)):
+        output_list.append(_)
+    p.close()
+    
+    # remove errors from output_list and make an array out of it
+    tmp = []
+    for i in output_list:
+        if i != '#Error':
+            tmp.append(i)
+    out_array = np.array(tmp)
+    
+    #write out raw data
+    Path(path+'_raw').mkdir(exist_ok=True)
+    save_raw_data(path,output_list,n_rep)
+    
+    # check which entry hast the lowest loss and write out result
+    best_fit  = out_array[np.argmin(out_array[:,-1]),:-1]
+    with open(path+'.txt','a') as file:
+        file.write('\n')
+        file.write(str(list(best_fit))[1:-1].replace(',',''))
+        
+    return
+
+#---INPUT-PARAMETERS
+max_reps  = 1000         # Number of fits for this CV
+max_tries = 100         # Number of MC replicates per fit
+path      = 'run_2'  # how to save the run
+n_cpu     = 15        # Number of CPUs used for multiprocessing
+timepoints = np.array([0,.25,.5,.75,1,1.5,2,3,4,5,6,7,8,9,10,11,12,13,14])
+
+#--- start script
+n_rep     = 0
+original  = generate_original_data(path,timepoints)
+while n_rep < max_reps:
+    n_rep   += 1
+    print('Replicate ',n_rep)
+    with_err             = generate_errored_data(original,path) 
+    get_best_fit(path,max_tries,n_rep,n_cpu)
+print('done')   

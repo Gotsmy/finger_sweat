@@ -1,0 +1,25 @@
+run_nr,mc_replicates,cv_replicates,c0,nr_timepoints,loss,error%,table_number
+run_104,100,300,yes,20,cauchy,10,tab_s5
+run_108,100,300,yes,20,huber,10,tab_s5
+run_109,100,300,yes,20,soft_l1,10,tab_s5
+run_110,100,300,yes,20,google,10,tab_s5
+run_111,100,300,yes,20,max_cauchy,10,tab_s5
+run_112,100,300,yes,20,max_huber,10,tab_s5
+run_113,100,300,yes,20,max_soft_l1,10,tab_s5
+run_121,100,300,yes,20,max_robust,10,tab_s5 tab_s6 tab_s8 tab_s11 tab_s12
+run_123,10,300,yes,20,max_robust,10,tab_s6
+run_124,1000,300,yes,20,max_robust,10,tab_s6
+run_125,100,300,yes,19,max_robust,10,tab_s8
+run_126,100,300,yes,17,max_robust,10,tab_s8
+run_127,100,300,yes,15,max_robust,10,tab_s8
+run_128,100,300,yes,13,max_robust,10,tab_s8
+run_129,100,300,yes,11,max_robust,10,tab_s8
+run_130,100,300,yes,15\dagger,max_robust,10,tab_s8
+run_131,100,300,yes,20,max_robust,20,tab_s11
+run_132,100,300,yes,20,max_robust,0,tab_s11
+run_133,100,300,yes,20,max_robust,1,tab_s11
+run_134,100,3000,yes,20,max_robust,10,tab_s9
+run_135,100,300,yes,20,max_robust,30,tab_s11
+run_136,100,300,yes,20,max_robust,10,tab_s12
+run_138,1,300,yes,20,max_robust,10,tab_s6
+run_139,100,3000,yes,15\dagger,max_robust,10,tab_s10

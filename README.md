@@ -1,4 +1,5 @@
 # Finger Sweat Analysis Enables Short Interval Metabolic Biomonitoring in Humans 
+This is code for Brunmair et al. 2020 [1]. For further discussion please see the manuscript.
 
 ## Prerequisites
 Python 3.7 and packages listed in requirements.txt.
@@ -13,7 +14,6 @@ The custom python functions used are listed in the section `functions`. In `samp
 
 ### Data Availability
 Since the Monte Carlo replicates are randomly sampled small differences of the solutions can occur between two runs. Therefore, the results which were used for the manuscript figures are given in `mathematical_model/fitted_parameters_manuscript/`.
-
 
 ## Supplementary Note: Sensitivity Analysis
 Here we analysed the error associated to the fitting procedure with theoretical simulations.
@@ -30,10 +30,14 @@ This will create a new run_simulation.txt file with information about original k
 The table `run_information.csv` gives an overview of the runs simulated for the data shown in the manuscript and their settings and names. The raw data of the runs is given in `/sensitivity_analysis/runs_manuscript/`.
 
 ## License
-The code heavily relies on the `scipy`[1] and `robust_loss_pytorch`[2] packages.
+The code heavily relies on the `scipy`[2] and `robust_loss_pytorch`[3] packages.
 
-[1] Virtanen, P., Gommers, R., Oliphant, T. E., Haberland, M., Reddy, T., Cournapeau, D., ... & van Mulbregt, P. (2020). SciPy 1.0: fundamental algorithms for scientific computing in Python. Nature methods, 17(3), 261-272.
+## References
 
-[2] Barron, J. T. (2019). A general and adaptive robust loss function. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 4331-4339).
+[1] Brunmair, J., Niederstaetter, L., Neuditschko, B., Bileck, A., Slany, A., Janker, L., ... & Gerner, C. (2020). Finger Sweat Analysis Enables Short Interval Metabolic Biomonitoring in Humans. bioRxiv.
+
+[2] Virtanen, P., Gommers, R., Oliphant, T. E., Haberland, M., Reddy, T., Cournapeau, D., ... & van Mulbregt, P. (2020). SciPy 1.0: fundamental algorithms for scientific computing in Python. Nature methods, 17(3), 261-272.
+
+[3] Barron, J. T. (2019). A general and adaptive robust loss function. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 4331-4339).
 
 TODO
