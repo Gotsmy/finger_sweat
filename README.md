@@ -24,7 +24,7 @@ To run a test simulation go to `sensitivity_analysis/test` and run the `run_simu
 cd sensitivity_analysis/test
 python ../run_simulation.py
 ```
-This will create a new run_simulation.txt file with information about original kinetic & concentration parameters/ timepoints/ V<sub>sweat</sub> and error values as well as the best solution parameters per bootstrap replicate. Optionally, it will create a `run_simulation_raw` directory with *i* files that store all *n* fitting parameters and losses.
+This will create a new run_simulation.txt file with information about original kinetic & concentration parameters/ timepoints/ V<sub>sweat</sub> and error values as well as the best solution parameters per bootstrap replicate. Optionally, it will create a `run_simulation_raw` directory with *i* files that store all *n*·(11+*j*) fitting parameters and *n* losses.
 
 ### Data Availability
 The table `run_information.csv` gives an overview of the runs simulated for the data shown in the manuscript and their settings and names. The raw data of the runs is given in `/sensitivity_analysis/runs_manuscript/`.
