@@ -1,5 +1,5 @@
 # Finger Sweat Analysis Enables Short Interval Metabolic Biomonitoring in Humans 
-This is code for Brunmair et al. 2020 [1]. For further discussion please see the manuscript.
+This is code discussed in Brunmair et al. 2020 [1]. For further explaination please see the manuscript and supplementary notes "Mathematical Model" and "Sensitivity Analysis".
 
 ## Prerequisites
 Python 3.7 and packages listed in requirements.txt.
@@ -31,13 +31,12 @@ The table `run_information.csv` gives an overview of the runs simulated for the 
 
 ## License
 The code heavily relies on the `scipy`[2] and `robust_loss_pytorch`[3] packages.
+TODO
 
 ## References
 
-[1] Brunmair, J., Niederstaetter, L., Neuditschko, B., Bileck, A., Slany, A., Janker, L., ... & Gerner, C. (2020). Finger Sweat Analysis Enables Short Interval Metabolic Biomonitoring in Humans. bioRxiv.
+[1] Brunmair, J., Niederstaetter, L., Neuditschko, B., Bileck, A., Slany, A., Janker, L., ... & Gerner, C. (2020). Finger Sweat Analysis Enables Short Interval Metabolic Biomonitoring in Humans. bioRxiv. https://doi.org/10.1101/2020.11.06.369355
 
 [2] Virtanen, P., Gommers, R., Oliphant, T. E., Haberland, M., Reddy, T., Cournapeau, D., ... & van Mulbregt, P. (2020). SciPy 1.0: fundamental algorithms for scientific computing in Python. Nature methods, 17(3), 261-272.
 
 [3] Barron, J. T. (2019). A general and adaptive robust loss function. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 4331-4339).
-
-TODO
