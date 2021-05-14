@@ -19,7 +19,7 @@ Since the Monte Carlo replicates are randomly sampled small differences of the s
 Here we analysed the error associated to the fitting procedure with theoretical simulations.
 
 ### Example
-To test the script go to `sensitivity_analysis/test` and run the `run_simulation.py` script.
+To run a test simulation go to `sensitivity_analysis/test` and run the `run_simulation.py` script.
 ```
 cd sensitivity_analysis/test
 python ../run_simulation.py
