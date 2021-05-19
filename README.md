@@ -30,8 +30,7 @@ This will create a new run_simulation.txt file with information about original k
 The table `run_information.csv` gives an overview of the runs simulated for the data shown in the manuscript and their settings and names. The raw data of the runs is given in `/sensitivity_analysis/runs_manuscript/`.
 
 ## License
-The code heavily relies on the `scipy`[2] and `robust_loss_pytorch`[3] packages.
-TODO
+The code heavily relies on the `scipy`[2] and `robust_loss_pytorch`[3] packages with corresponding licenses found [here](https://www.scipy.org/scipylib/license.html) and  [here](https://github.com/jonbarron/robust_loss_pytorch/blob/master/LICENSE) repsectively. Original code is licensed under GPL v3 (see LICENSE file).
 
 ## References
 
