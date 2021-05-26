@@ -8,12 +8,9 @@ pip install -r requirements.txt
 ```
 
 ## Mathematical Model
-### Example
+### Example & Data Availability
 To fit kinetic/ concentration/ V<sub>sweat</sub> parameters of our model onto the measured data (M&#771;) given in `mathematical_model/raw_data/` use the notebook `mathematical_model/donor_fitting.ipynb`.
 The custom python functions used are listed in the section `functions`. In `sampling for MC replicates & multiprocess fitting` the actual fitting is done and the results are saved in the `mathematical_model/fitted_parameters/` directory. In sections `parse results` and `plot results` the best solution for every time-series is read in and plotted.
-
-### Data Availability
-Since the Monte Carlo replicates are randomly sampled small differences of the solutions can occur between two runs. Therefore, the results which were used for the manuscript figures are given in `mathematical_model/fitted_parameters_manuscript/`.
 
 ## Supplementary Note: Sensitivity Analysis
 Here we analysed the error associated to the fitting procedure with theoretical simulations.
