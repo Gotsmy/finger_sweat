@@ -9,14 +9,14 @@ pip install -r requirements.txt
 
 ## Mathematical Model
 ### Example & Data Availability
-To fit kinetic/ concentration/ V<sub>sweat</sub> parameters of our model onto the measured data (M&#771;) given in `mathematical_model/raw_data/` use the notebook `mathematical_model/donor_fitting.ipynb`.
-The custom python functions used are listed in the section `functions`. In `sampling for MC replicates & multiprocess fitting` the actual fitting is done and the results are saved in the `mathematical_model/fitted_parameters/` directory. In sections `parse results` and `plot results` the best solution for every time-series is read in and plotted.
+The notebook `mathematical_model/donor_fitting.ipynb` is used to fit kinetic/ concentration/ V<sub>sweat</sub> parameters of our model onto the measured (IS normalized) data (M&#771;) given in `mathematical_model/raw_data/`.
+Custom python functions are listed in the notebook in section `functions`. In `sampling for MC replicates & multiprocess fitting` the actual fitting is done and the results are saved in the `mathematical_model/fitted_parameters/` directory. In sections `parse results` and `plot results` the best solution for every time-series is read in and plotted.
 
 ## Supplementary Note: Sensitivity Analysis
 Here we analysed the error associated to the fitting procedure with theoretical simulations.
 
 ### Example
-To run a test simulation go to `sensitivity_analysis/test` and run the `run_simulation.py` script.
+To run a test simulation go to `sensitivity_analysis/test` and run the `run_simulation.py` script. Note: with standard settings this can take several hours, depending on your machine. To run a shorter test consider lowering the values for *n* and *i* (`max_reps`and `max_tries` respectively).
 ```
 cd sensitivity_analysis/test
 python ../run_simulation.py
@@ -27,7 +27,7 @@ This will create a new run_simulation.txt file with information about original k
 The table `run_information.csv` gives an overview of the runs simulated for the data shown in the manuscript and their settings and names. The raw data of the runs is given in `/sensitivity_analysis/runs_manuscript/`.
 
 ## License
-The code heavily relies on the `scipy`[2] and `robust_loss_pytorch`[3] packages with corresponding licenses found [here](https://www.scipy.org/scipylib/license.html) and  [here](https://github.com/jonbarron/robust_loss_pytorch/blob/master/LICENSE) repsectively. Original code is licensed under GPL v3 (see LICENSE file).
+The code (and especially the implemented loss functions) heavily relies on the `scipy`[2] and `robust_loss_pytorch`[3] packages with corresponding licenses found [here](https://www.scipy.org/scipylib/license.html) and  [here](https://github.com/jonbarron/robust_loss_pytorch/blob/master/LICENSE) repsectively. Original code is licensed under GPL v3 (see LICENSE file).
 
 ## References
 
