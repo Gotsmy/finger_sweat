@@ -8,11 +8,16 @@ pip install -r requirements.txt
 ```
 
 ## Mathematical Model
-### Example & Data Availability
-The notebook `mathematical_model/donor_fitting.ipynb` is used to fit kinetic/ concentration/ V<sub>sweat</sub> parameters of our model onto the measured (IS normalized) data (M&#771;) given in `mathematical_model/raw_data/`.
-Custom python functions are listed in the notebook in section `functions`. In `sampling for MC replicates & multiprocess fitting` the actual fitting is done and the results are saved in the `mathematical_model/fitted_parameters/` directory. In sections `parse results` and `plot results` the best solution for every time-series is read in and plotted.
+Here we fitted our model onto raw time-series data.
 
-## Supplementary Note: Sensitivity Analysis
+### Example
+The notebook `mathematical_model/donor_fitting.ipynb` is used to fit kinetic/ concentration/ V<sub>sweat</sub> parameters of our model onto the measured (IS normalized) data (M&#771;) given in `mathematical_model/raw_data/`.
+Custom python functions are listed in the notebook in section `functions`. In `sampling for MC replicates & multiprocess fitting` the actual fitting is done and the results are saved in the `mathematical_model/fitted_parameters/` directory. 
+
+### Data Availability
+In sections `parse results` and `plot results` of the same notebook the best solution for every time-series is read in and plotted.
+
+## Sensitivity Analysis
 Here we analysed the error associated to the fitting procedure with theoretical simulations.
 
 ### Example
