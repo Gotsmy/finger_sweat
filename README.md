@@ -12,10 +12,11 @@ Here we fitted our model onto raw time-series data.
 
 ### Example
 The notebook `mathematical_model/donor_fitting.ipynb` is used to fit kinetic/ concentration/ V<sub>sweat</sub> parameters of our model onto the measured (IS normalized) data (M&#771;) given in `mathematical_model/raw_data/`.
-Custom python functions are listed in the notebook in section `functions`. In `sampling for MC replicates & multiprocess fitting` the actual fitting is done and the results are saved in the `mathematical_model/fitted_parameters/` directory. 
+Custom python functions are listed in the notebook in section `functions`. In `sampling for MC replicates & multiprocess fitting` the actual fitting is done and the results are saved in the `mathematical_model/fitted_parameters/` directory. In sections `parse results` and `plot results` best solution for every time-series is read in and the unit-less concentration (as described in the Supplementary Notes: Mathematical Model) are plotted.
 
 ### Data Availability
-In sections `parse results` and `plot results` of the same notebook the best solution for every time-series is read in and plotted.
+The notebook `mathematical_model/donor_analysis.ipynb` provides code that has been used to create figures shown in the manuscript and supplementary material. There we used donor 1 and donor 2 as examples, here the figures are plotted for all donors.
+
 
 ## Sensitivity Analysis
 Here we analysed the error associated to the fitting procedure with theoretical simulations.

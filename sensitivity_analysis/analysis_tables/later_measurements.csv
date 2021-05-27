@@ -1,0 +1,123 @@
+,run_134,run_134 median
+mc_replicates,100,100
+c0,yes,yes
+loss,max_robust,max_robust
+error%,10,10
+n_samples,3000,3000
+n_timepoints,20,20
+kcincaf,25.21,1.69
+kcafpar,17.56,3.01
+kcafbro,17.65,3.81
+kcafphy,17.85,3.73
+kcafdeg,38.12,-8.55
+kpardeg,22.35,1.09
+kbrodeg,27.11,3.18
+kphydeg,26.8,2.94
+par0,17.12,1.07
+bro0,16.95,0.45
+phy0,17.02,0.56
+sv,20.95,-2.45
+sv t=0.0,23.63,-0.69
+sv t=0.25,21.63,-2.51
+sv t=0.5,22.3,-2.35
+sv t=0.75,23.24,-2.41
+sv t=1.0,20.82,-2.2
+sv t=1.5,16.62,-1.34
+sv t=2.0,14.13,-1.68
+sv t=3.0,11.67,-1.49
+sv t=4.0,19.23,-2.19
+sv t=5.0,20.86,-1.92
+sv t=6.0,14.13,-2.72
+sv t=7.0,13.77,-2.89
+sv t=8.0,13.25,-2.97
+sv t=9.0,15.5,-3.13
+sv t=10.0,15.1,-3.08
+sv t=11.0,22.78,-3.02
+sv t=12.0,23.4,-3.59
+sv t=13.0,24.45,-3.36
+sv t=14.0,29.95,-3.98
+sv t=24.0,35.67,-5.42
+caf conc. t=0.0,,
+caf conc. t=0.25,19.63,1.44
+caf conc. t=0.5,15.33,1.22
+caf conc. t=0.75,11.99,1.07
+caf conc. t=1.0,9.37,0.88
+caf conc. t=1.5,5.76,0.43
+caf conc. t=2.0,3.77,0.01
+caf conc. t=3.0,3.36,-0.01
+caf conc. t=4.0,4.67,0.44
+caf conc. t=5.0,6.09,0.81
+caf conc. t=6.0,7.48,1.07
+caf conc. t=7.0,8.86,1.26
+caf conc. t=8.0,10.25,1.42
+caf conc. t=9.0,11.64,1.62
+caf conc. t=10.0,13.04,1.78
+caf conc. t=11.0,14.46,1.92
+caf conc. t=12.0,15.88,2.11
+caf conc. t=13.0,17.33,2.28
+caf conc. t=14.0,18.78,2.5
+caf conc. t=24.0,34.4,4.24
+caf conc.,12.22,0.87
+par conc. t=0.0,17.12,1.07
+par conc. t=0.25,16.97,1.14
+par conc. t=0.5,16.0,1.58
+par conc. t=0.75,14.55,1.92
+par conc. t=1.0,13.0,2.22
+par conc. t=1.5,10.29,2.41
+par conc. t=2.0,8.47,2.24
+par conc. t=3.0,7.22,2.13
+par conc. t=4.0,7.62,2.35
+par conc. t=5.0,8.49,2.48
+par conc. t=6.0,9.48,2.64
+par conc. t=7.0,10.52,2.89
+par conc. t=8.0,11.62,2.99
+par conc. t=9.0,12.77,2.95
+par conc. t=10.0,13.99,2.94
+par conc. t=11.0,15.27,3.11
+par conc. t=12.0,16.61,3.23
+par conc. t=13.0,18.01,3.3
+par conc. t=14.0,19.45,3.45
+par conc. t=24.0,36.16,5.51
+par conc.,14.03,2.51
+bro conc. t=0.0,16.95,0.45
+bro conc. t=0.25,16.77,0.51
+bro conc. t=0.5,15.8,0.89
+bro conc. t=0.75,14.38,1.7
+bro conc. t=1.0,12.87,2.16
+bro conc. t=1.5,10.24,2.45
+bro conc. t=2.0,8.51,2.42
+bro conc. t=3.0,7.36,2.38
+bro conc. t=4.0,7.8,2.48
+bro conc. t=5.0,8.7,2.89
+bro conc. t=6.0,9.71,3.08
+bro conc. t=7.0,10.76,3.03
+bro conc. t=8.0,11.86,2.92
+bro conc. t=9.0,13.02,3.02
+bro conc. t=10.0,14.23,3.11
+bro conc. t=11.0,15.5,3.11
+bro conc. t=12.0,16.83,3.25
+bro conc. t=13.0,18.2,3.31
+bro conc. t=14.0,19.63,3.33
+bro conc. t=24.0,36.1,4.03
+bro conc.,14.12,2.51
+phy conc. t=0.0,17.02,0.56
+phy conc. t=0.25,16.83,0.8
+phy conc. t=0.5,15.83,1.39
+phy conc. t=0.75,14.42,1.82
+phy conc. t=1.0,12.91,2.29
+phy conc. t=1.5,10.33,2.39
+phy conc. t=2.0,8.65,2.2
+phy conc. t=3.0,7.57,2.29
+phy conc. t=4.0,8.03,2.42
+phy conc. t=5.0,8.9,2.51
+phy conc. t=6.0,9.87,2.72
+phy conc. t=7.0,10.88,2.68
+phy conc. t=8.0,11.94,2.8
+phy conc. t=9.0,13.05,2.81
+phy conc. t=10.0,14.23,2.84
+phy conc. t=11.0,15.46,3.06
+phy conc. t=12.0,16.75,3.15
+phy conc. t=13.0,18.1,3.05
+phy conc. t=14.0,19.49,3.04
+phy conc. t=24.0,35.68,4.2
+phy conc.,14.15,2.4

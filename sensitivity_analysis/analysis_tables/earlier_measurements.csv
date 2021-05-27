@@ -1,0 +1,98 @@
+,run_139,run_139 median
+mc_replicates,100,100
+c0,yes,yes
+loss,max_robust,max_robust
+error%,10,10
+n_samples,3000,3000
+n_timepoints,15,15
+kcincaf,28.68,6.57
+kcafpar,18.11,-1.04
+kcafbro,17.66,0.08
+kcafphy,17.43,0.43
+kcafdeg,37.23,-11.65
+kpardeg,17.61,-2.94
+kbrodeg,19.97,-3.29
+kphydeg,19.99,-2.73
+par0,19.15,4.18
+bro0,18.84,3.69
+phy0,18.93,3.4
+sv,24.1,-4.13
+sv t=0.0,19.93,-4.24
+sv t=0.25,24.87,-5.63
+sv t=0.5,18.23,-5.39
+sv t=0.75,19.09,-4.21
+sv t=1.0,22.55,-3.58
+sv t=1.5,15.59,-2.81
+sv t=2.0,12.67,-2.33
+sv t=3.0,15.37,-1.74
+sv t=4.0,13.77,-2.02
+sv t=6.0,14.66,-3.38
+sv t=8.0,16.49,-4.03
+sv t=24.0,32.77,-9.38
+sv t=25.0,38.29,-10.13
+sv t=26.0,36.59,-10.95
+sv t=27.0,36.06,-11.22
+caf conc. t=0.0,,
+caf conc. t=0.25,21.7,5.31
+caf conc. t=0.5,16.46,4.22
+caf conc. t=0.75,12.51,3.44
+caf conc. t=1.0,9.51,2.66
+caf conc. t=1.5,5.55,1.67
+caf conc. t=2.0,3.5,0.74
+caf conc. t=3.0,3.25,0.63
+caf conc. t=4.0,4.6,1.25
+caf conc. t=6.0,7.41,2.29
+caf conc. t=8.0,10.19,3.24
+caf conc. t=24.0,35.33,10.75
+caf conc. t=25.0,37.14,11.23
+caf conc. t=26.0,38.98,11.67
+caf conc. t=27.0,40.86,12.11
+caf conc.,17.64,2.34
+par conc. t=0.0,19.15,4.18
+par conc. t=0.25,18.93,4.32
+par conc. t=0.5,17.68,4.48
+par conc. t=0.75,15.89,4.44
+par conc. t=1.0,14.01,4.33
+par conc. t=1.5,10.84,3.77
+par conc. t=2.0,8.89,3.11
+par conc. t=3.0,7.94,2.42
+par conc. t=4.0,8.7,2.45
+par conc. t=6.0,10.8,2.71
+par conc. t=8.0,12.79,3.28
+par conc. t=24.0,35.51,10.43
+par conc. t=25.0,37.37,10.9
+par conc. t=26.0,39.29,11.34
+par conc. t=27.0,41.26,11.87
+par conc.,19.99,4.21
+bro conc. t=0.0,18.84,3.69
+bro conc. t=0.25,18.56,3.78
+bro conc. t=0.5,17.31,3.84
+bro conc. t=0.75,15.55,3.98
+bro conc. t=1.0,13.71,4.04
+bro conc. t=1.5,10.64,3.63
+bro conc. t=2.0,8.78,2.96
+bro conc. t=3.0,7.94,2.3
+bro conc. t=4.0,8.77,2.35
+bro conc. t=6.0,10.98,2.88
+bro conc. t=8.0,13.06,3.36
+bro conc. t=24.0,35.34,10.37
+bro conc. t=25.0,37.16,10.81
+bro conc. t=26.0,39.03,11.17
+bro conc. t=27.0,40.95,11.58
+bro conc.,19.84,4.0
+phy conc. t=0.0,18.93,3.4
+phy conc. t=0.25,18.65,3.49
+phy conc. t=0.5,17.41,3.86
+phy conc. t=0.75,15.66,3.98
+phy conc. t=1.0,13.82,4.03
+phy conc. t=1.5,10.72,3.93
+phy conc. t=2.0,8.8,3.33
+phy conc. t=3.0,7.85,2.6
+phy conc. t=4.0,8.62,2.91
+phy conc. t=6.0,10.81,3.37
+phy conc. t=8.0,12.92,3.7
+phy conc. t=24.0,35.5,10.05
+phy conc. t=25.0,37.33,10.46
+phy conc. t=26.0,39.22,10.95
+phy conc. t=27.0,41.16,11.32
+phy conc.,19.89,4.26
