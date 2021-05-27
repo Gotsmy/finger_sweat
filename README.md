@@ -30,7 +30,7 @@ python ../run_simulation.py
 This will create a new run_simulation.txt file with information about original kinetic & concentration parameters/ timepoints/ V<sub>sweat</sub> and error values as well as the best solution parameters per bootstrap replicate. Optionally, it will create a `run_simulation_raw` directory with *i* files that store all *n*·(11+*j*) fitting parameters and *n* losses.
 
 ### Data Availability
-The table `run_information.csv` gives an overview of the runs simulated for the data shown in the manuscript and their settings and names. The raw data of the runs is given in `/sensitivity_analysis/runs_manuscript/`.
+The table `run_information.csv` gives an overview of the runs simulated for the data shown in the manuscript and their settings and names. The raw data of the runs is given in `sensitivity_analysis/runs_manuscript/`. The notebook `sensitivity_analysis/sensitivity_analysis.ipynb` shows how the data was processed to extract CV and MRE of the different simulations. The resulting tables are found in the `sensitivity_analysis/analysis_tables/` directory. They correspond to the tables shown in the Supplementary Notes: Sensitivity Analysis section of the manuscript.
 
 ## License
 The code (and especially the implemented loss functions) heavily relies on the `scipy`[2] and `robust_loss_pytorch`[3] packages with corresponding licenses found [here](https://www.scipy.org/scipylib/license.html) and  [here](https://github.com/jonbarron/robust_loss_pytorch/blob/master/LICENSE) repsectively. Original code is licensed under GPL v3 (see LICENSE file).
