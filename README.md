@@ -1,5 +1,6 @@
 # Finger Sweat Analysis Enables Short Interval Metabolic Biomonitoring in Humans 
-This is code discussed in Brunmair et al. 2020 [1]. For further explaination please see the manuscript and supplementary notes "Mathematical Model" and "Sensitivity Analysis".
+This is code discussed in Brunmair, Gotsmy et al. 2021 [1] [![DOI:10.1038/s41467-021-26245-4](https://zenodo.org/badge/DOI/10.1007/978-3-319-76207-4_15.svg)](https://doi.org/10.1038/s41467-021-26245-4)
+. For further explaination please see the manuscript and supplementary notes "Mathematical Model" and "Sensitivity Analysis".
 
 ## Prerequisites
 Python 3.7 and packages listed in requirements.txt.
@@ -40,7 +41,7 @@ This code can be cited using following DOI [![DOI](https://zenodo.org/badge/3673
 
 ## References
 
-[1] Brunmair, J., Niederstaetter, L., Neuditschko, B., Bileck, A., Slany, A., Janker, L., ... & Gerner, C. (2020). Finger Sweat Analysis Enables Short Interval Metabolic Biomonitoring in Humans. bioRxiv. https://doi.org/10.1101/2020.11.06.369355
+[1] Brunmair, J., Gotsmy, M., Niederstaetter, L., Neuditschko, B., Bileck, A., Slany, A., Feuerstein, M.L., Langbauer, C., Janker, L., Zanghellini, J., Meier-Menches, S.M., & Gerner, C. (2020). Finger sweat analysis enables short interval metabolic biomonitoring in humans. [![DOI:10.1038/s41467-021-26245-4](https://zenodo.org/badge/DOI/10.1007/978-3-319-76207-4_15.svg)](https://doi.org/10.1038/s41467-021-26245-4) (Previously bioRxiv. https://doi.org/10.1101/2020.11.06.369355)
 
 [2] Virtanen, P., Gommers, R., Oliphant, T. E., Haberland, M., Reddy, T., Cournapeau, D., ... & van Mulbregt, P. (2020). SciPy 1.0: fundamental algorithms for scientific computing in Python. Nature methods, 17(3), 261-272.
 
