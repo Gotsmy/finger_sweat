@@ -37,7 +37,7 @@ The table `run_information.csv` gives an overview of the runs simulated for the 
 The code (and especially the implemented loss functions) heavily relies on the `scipy`[2] and `robust_loss_pytorch`[3] packages with corresponding licenses found [here](https://www.scipy.org/scipylib/license.html) and  [here](https://github.com/jonbarron/robust_loss_pytorch/blob/master/LICENSE) repsectively. Original code is licensed under GPL v3 (see LICENSE file).
 
 # Citing
-This code can be cited using following DOI [![DOI](https://zenodo.org/badge/367308843.svg)](https://zenodo.org/badge/latestdoi/367308843)
+This code can be cited using following DOI [![DOI](https://zenodo.org/badge/367308843.svg)](https://zenodo.org/badge/latestdoi/367308843).
 
 ## References
 
